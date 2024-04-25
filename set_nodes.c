@@ -38,7 +38,7 @@ void	input_types(char *inpt, t_shell *info, t_token *first_token)
 		i++;
 		cur = cur->next;
 	}
-	print_linked_tokens(*(info->first_token_node));
+	// print_linked_tokens(*(info->first_token_node));
 }
 
 int	set_token_word(char *inpt, int i, t_token *token)
