@@ -6,7 +6,7 @@
 /*   By: tsimitop <tsimitop@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 16:36:23 by tsimitop          #+#    #+#             */
-/*   Updated: 2024/04/25 16:38:19 by tsimitop         ###   ########.fr       */
+/*   Updated: 2024/04/25 16:40:52 by tsimitop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,14 +125,14 @@ void	close_fd(int *fd)
 	close(fd[1]);
 }
 
-int	handle_exit(int status)
-{
-	if (WIFEXITED(status))
-		status = WEXITSTATUS(status);
-	else
-		status = EXIT_FAILURE;
-	return (status);
-}
+// int	handle_exit(int status)
+// {
+// 	if (WIFEXITED(status))
+// 		status = WEXITSTATUS(status);
+// 	else
+// 		status = EXIT_FAILURE;
+// 	return (status);
+// }
 
 void	handle_error(char *str)
 {
