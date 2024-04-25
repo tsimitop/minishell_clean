@@ -6,7 +6,7 @@
 /*   By: tsimitop <tsimitop@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/25 16:45:07 by tsimitop          #+#    #+#             */
-/*   Updated: 2024/04/25 16:45:25 by tsimitop         ###   ########.fr       */
+/*   Updated: 2024/04/25 16:57:16 by tsimitop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,4 +26,3 @@ int	inputis(char *inpt, char *string)
 	else
 		return (0);
 }
-

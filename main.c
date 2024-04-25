@@ -6,7 +6,7 @@
 /*   By: tsimitop <tsimitop@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 19:40:57 by tsimitop          #+#    #+#             */
-/*   Updated: 2024/04/25 15:55:27 by tsimitop         ###   ########.fr       */
+/*   Updated: 2024/04/25 16:50:57 by tsimitop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ int	main(int argc, char **argv, char **env)
 	if (!prompt_to_use)
 		return (free(prompt), 0);
 	initialise_basics(argc, env, info);
+	minishell_loop(info, prompt_to_use, env); //allocate environment properly
 	return (0);
 }
 
@@ -36,7 +37,7 @@ void	initialise_basics(int argc, char **env, t_shell *info)
 {
 	char	cwd[1024];
 	info->argc = argc;
-	info->env = env;
+	info->env = env; //env not properly initialized?
 	info->cwd = getcwd(cwd, sizeof(cwd));
 }
 

@@ -14,7 +14,13 @@ NAME = minishell
 #									MAIN PART								   #
 ################################################################################
 
-SRC =	main.c
+SRC =	main.c\
+		loop.c\
+		set_nodes.c\
+		utils.c\
+		pipex_functions.c\
+		yun_function.c\
+		checks.c
 
 OBJ = $(SRC:.c=.o)
 

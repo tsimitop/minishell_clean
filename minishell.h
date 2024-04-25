@@ -6,7 +6,7 @@
 /*   By: tsimitop <tsimitop@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 20:09:13 by tsimitop          #+#    #+#             */
-/*   Updated: 2024/04/25 16:41:03 by tsimitop         ###   ########.fr       */
+/*   Updated: 2024/04/25 16:56:14 by tsimitop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,5 +74,11 @@ void	close_fd(int *fd);
 void	handle_error(char *str);
 void	handle_error_free(char *str);
 
+//yun
+int	inputis(char *inpt, char *string);
+
+//checks
+void	print_token(t_token *token);
+void	print_linked_tokens(t_token *token);
 
 #endif

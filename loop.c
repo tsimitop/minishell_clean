@@ -6,7 +6,7 @@
 /*   By: tsimitop <tsimitop@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/23 14:52:09 by tsimitop          #+#    #+#             */
-/*   Updated: 2024/04/25 16:46:43 by tsimitop         ###   ########.fr       */
+/*   Updated: 2024/04/25 16:59:18 by tsimitop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,11 +23,11 @@ void	minishell_loop(t_shell *info, char *prompt, char **env)
 	{
 		if (prompt)
 			input_str = readline(prompt);
-		token = *(info->first_token_node);
 		if (inputis(input_str, "exit"))
 			exit(0);
 		if (!inputis(input_str, ""))
 			add_history(input_str);
+		token = *(info->first_token_node);
 		input_types(input_str, info, token);
 		// funtion to create tree or bigger linked list
 		//new function to do the rest of this working with tree or bigger linked list
@@ -37,6 +37,7 @@ void	minishell_loop(t_shell *info, char *prompt, char **env)
 			perror("cmd not allocated");
 			exit(1);
 		}
+ft_printf("________________________\n");
 		if (find_cmd_in_env(cmd, env))	//get from partner
 		{
 			full_path = find_cmd_in_env(cmd, env); //copy from pipex
