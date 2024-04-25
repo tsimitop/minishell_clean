@@ -6,7 +6,7 @@
 /*   By: tsimitop <tsimitop@student.42heilbronn.    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/22 19:40:57 by tsimitop          #+#    #+#             */
-/*   Updated: 2024/04/25 16:50:57 by tsimitop         ###   ########.fr       */
+/*   Updated: 2024/04/25 17:04:37 by tsimitop         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,7 @@ int	main(int argc, char **argv, char **env)
 	if (argc != 1)
 		ft_printf("Minishell executable does not use arguments\n");
 	info = ft_calloc(sizeof(t_shell), 1);
+	info->first_token_node = ft_calloc(sizeof(t_token), 1);
 	prompt = ft_strjoin("minishell_", getenv("USER"));
 	if (!prompt)
 		return (0);
@@ -29,7 +30,13 @@ int	main(int argc, char **argv, char **env)
 	if (!prompt_to_use)
 		return (free(prompt), 0);
 	initialise_basics(argc, env, info);
-	minishell_loop(info, prompt_to_use, env); //allocate environment properly
+// ft_printf("env[0] = %s\n", env[0]);
+// ft_printf("info->env[0] = %s\n", info.env[0]);
+	minishell_loop(info, prompt_to_use, env);
+	if (prompt)
+		free(prompt);
+	if (prompt_to_use)
+		free(prompt_to_use);
 	return (0);
 }
 
